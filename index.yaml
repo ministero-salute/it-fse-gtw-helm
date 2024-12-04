@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  it-fse-gtw-rules-manager:
+  - apiVersion: v2
+    appVersion: "88409"
+    created: "2024-12-04T15:22:37.974938165+01:00"
+    description: servizio del Fascicolo Sanitario Elettronico 2.0
+    digest: 4543d15a500fdf8a618276e727e2d18017806dd13621e7e330f67110a64ca4ea
+    name: it-fse-gtw-rules-manager
+    type: application
+    urls:
+    - it-fse-gtw-rules-manager/it-fse-gtw-rules-manager-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-12-04T15:22:37.974436759+01:00"
