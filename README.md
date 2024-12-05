@@ -75,7 +75,7 @@ helm repo update fse
 helm fetch <nome-repo>/<nome-chart> --version <versione-chart> 
 ```
 
-Esempio di utilizzo:
+Esempio di utilizzo:<br>
 ** Per scaricare la versione 0.1.0 elencata dal comando di ricerca per il servizio it-fse-gtw-rules-manager: **
 
 ```bash
