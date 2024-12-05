@@ -35,7 +35,7 @@ helm upgrade --install it-fse-gtw-config it-fse-gtw-config-0.1.0.tgz --set "imag
 ```
 
 *Output:*
->Release "it-fse-gtw-rules-manager" does not exist. Installing it now.<br>
+>Release "it-fse-gtw-config" does not exist. Installing it now.<br>
 >NAME it-fse-gtw-config<br>
 >LAST DEPLOYED: Fri Nov 29 11:05:42 2024 <br>
 >NAMESPACE: default  <br>
