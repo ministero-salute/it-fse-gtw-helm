@@ -35,13 +35,13 @@ helm upgrade --install it-fse-gtw-config it-fse-gtw-config-0.1.0.tgz --set "imag
 ```
 
 *Output:*
->Release "it-fse-gtw-rules-manager" does not exist. Installing it now.
->NAME it-fse-gtw-config
->LAST DEPLOYED: Fri Nov 29 11:05:42 2024  
->NAMESPACE: default  
->STATUS: deployed  
->REVISION: 1  
->TEST SUITE: None
+>Release "it-fse-gtw-rules-manager" does not exist. Installing it now.<br>
+>NAME it-fse-gtw-config<br>
+>LAST DEPLOYED: Fri Nov 29 11:05:42 2024 <br>
+>NAMESPACE: default  <br>
+>STATUS: deployed  <br>
+>REVISION: 1  <br>
+>TEST SUITE: None<br>
 
 ## Rimozione del Servizio:
 Per rimuovere il servizio appena installato, esegui il seguente comando:
