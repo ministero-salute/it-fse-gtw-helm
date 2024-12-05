@@ -1,6 +1,6 @@
 [![en](https://img.shields.io/badge/lang-en-red.svg)](installation-guide.en.md)
 
-# Come Installare il Servizio it-fse-gtw-config
+# Come Installare il servizio it-fse-gtw-config
 
 ## Creazione della ConfigMap
 
