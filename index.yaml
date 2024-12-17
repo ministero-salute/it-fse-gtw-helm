@@ -3,7 +3,7 @@ entries:
   it-fse-gtw-config:
   - apiVersion: v2
     appVersion: "90435"
-    created: "2024-12-17T16:23:09.353304902+01:00"
+    created: "2024-12-17T16:25:05.429962095+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: bbf8c91dcac56e841570c8b3b9e236c6a9b640371f25c6a8fc0b62ce1e60d9d2
     name: it-fse-gtw-config
@@ -14,7 +14,7 @@ entries:
   it-fse-gtw-dispatcher:
   - apiVersion: v2
     appVersion: "90437"
-    created: "2024-12-17T16:23:09.353927701+01:00"
+    created: "2024-12-17T16:25:05.430419199+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 82579d44b9d7c9aee93bf320eb1b957fa6881516f459557a9b5138bd7c5a0ba2
     name: it-fse-gtw-dispatcher
@@ -22,4 +22,15 @@ entries:
     urls:
     - it-fse-gtw-dispatcher/it-fse-gtw-dispatcher-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-17T16:23:09.352801102+01:00"
+  it-fse-gtw-ini-client:
+  - apiVersion: v2
+    appVersion: "90436"
+    created: "2024-12-17T16:25:05.430824203+01:00"
+    description: servizio del Fascicolo Sanitario Elettronico 2.0
+    digest: 33a90cc4f64017723670fed56dcb48ec454705fb9b081b63afb8de58abb89298
+    name: it-fse-gtw-ini-client
+    type: application
+    urls:
+    - it-fse-gtw-ini-client/it-fse-gtw-ini-client-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-12-17T16:25:05.42939379+01:00"
