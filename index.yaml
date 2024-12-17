@@ -3,7 +3,7 @@ entries:
   it-fse-gtw-config:
   - apiVersion: v2
     appVersion: "90435"
-    created: "2024-12-17T16:53:50.728933384+01:00"
+    created: "2024-12-17T16:57:01.513528532+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: bbf8c91dcac56e841570c8b3b9e236c6a9b640371f25c6a8fc0b62ce1e60d9d2
     name: it-fse-gtw-config
@@ -14,7 +14,7 @@ entries:
   it-fse-gtw-dispatcher:
   - apiVersion: v2
     appVersion: "90437"
-    created: "2024-12-17T16:53:50.729384483+01:00"
+    created: "2024-12-17T16:57:01.514016837+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 82579d44b9d7c9aee93bf320eb1b957fa6881516f459557a9b5138bd7c5a0ba2
     name: it-fse-gtw-dispatcher
@@ -22,10 +22,21 @@ entries:
     urls:
     - it-fse-gtw-dispatcher/it-fse-gtw-dispatcher-0.1.0.tgz
     version: 0.1.0
+  it-fse-gtw-indexer:
+  - apiVersion: v2
+    appVersion: "90452"
+    created: "2024-12-17T16:57:01.514427041+01:00"
+    description: servizio del Fascicolo Sanitario Elettronico 2.0
+    digest: 055552cfbcff678c056643dd2bb526651189747464d37521c63ab2fe052c0ab1
+    name: it-fse-gtw-indexer
+    type: application
+    urls:
+    - it-fse-gtw-indexer/it-fse-gtw-indexer-0.1.0.tgz
+    version: 0.1.0
   it-fse-gtw-ini-client:
   - apiVersion: v2
     appVersion: "90436"
-    created: "2024-12-17T16:53:50.729815783+01:00"
+    created: "2024-12-17T16:57:01.514841944+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 33a90cc4f64017723670fed56dcb48ec454705fb9b081b63afb8de58abb89298
     name: it-fse-gtw-ini-client
@@ -36,7 +47,7 @@ entries:
   it-fse-gtw-status-check:
   - apiVersion: v2
     appVersion: "90451"
-    created: "2024-12-17T16:53:50.730192982+01:00"
+    created: "2024-12-17T16:57:01.515231748+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: cd3ac11831090be4ae06798e3c9c968ffe07b7dc9dffaf2a18f66e04d8287c20
     name: it-fse-gtw-status-check
@@ -47,7 +58,7 @@ entries:
   it-fse-gtw-status-manager:
   - apiVersion: v2
     appVersion: "90450"
-    created: "2024-12-17T16:53:50.730600581+01:00"
+    created: "2024-12-17T16:57:01.515631451+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 6d18ebcf2a79aeb78bdf3620974040a46458f44309d394c48440c9bb4d27e314
     name: it-fse-gtw-status-manager
@@ -55,4 +66,4 @@ entries:
     urls:
     - it-fse-gtw-status-manager/it-fse-gtw-status-manager-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-17T16:53:50.728390085+01:00"
+generated: "2024-12-17T16:57:01.512995728+01:00"
