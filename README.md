@@ -117,27 +117,6 @@ Per disinstallare un chart:
 helm uninstall <nome-release> --namespace <namespace>
 ```
 
-## Struttura del Repository
-
-Il repository è organizzato come segue:
-```plaintext
-.
-├── charts/                # Directory contenente i chart Helm
-├── templates/             # Template condivisi per configurazioni standard
-├── values.yaml            # File dei valori predefiniti
-├── README.md              # Documentazione del repository
-```
-
-Ogni chart segue la struttura standard di Helm:
-```plaintext
-my-chart/
-├── Chart.yaml             # Metadati del chart
-├── values.yaml            # Valori di configurazione predefiniti
-├── charts/                # Dipendenze del chart
-├── templates/             # Template delle risorse Kubernetes
-└── README.md              # Documentazione specifica del chart
-```
-
 ## Nota Finale
 
 Assicurati che tutte le configurazioni nei file `values.yaml` siano aggiornate in base al tuo ambiente di destinazione. **Predisponi Event Hub e Cosmos DB su Azure**, poiché sono componenti fondamentali richiesti dai servizi. Consulta la documentazione ufficiale di Helm per ulteriori dettagli su come utilizzare i chart Helm.
