@@ -3,7 +3,7 @@ entries:
   it-fse-gtw-config:
   - apiVersion: v2
     appVersion: "98017"
-    created: "2025-03-04T15:46:48.451838819+01:00"
+    created: "2025-03-04T16:02:40.377414568+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 5ebf338af3f983a5b91adcb9ee06ca4e3e96fc9110856fabe73dc9058c721a53
     name: it-fse-gtw-config
@@ -13,7 +13,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: "90435"
-    created: "2025-03-04T15:46:48.451423588+01:00"
+    created: "2025-03-04T16:02:40.376925283+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: bbf8c91dcac56e841570c8b3b9e236c6a9b640371f25c6a8fc0b62ce1e60d9d2
     name: it-fse-gtw-config
@@ -24,7 +24,7 @@ entries:
   it-fse-gtw-dispatcher:
   - apiVersion: v2
     appVersion: "98060"
-    created: "2025-03-04T15:46:48.45274326+01:00"
+    created: "2025-03-04T16:02:40.37922996+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 0cfdb15e98417a142dd3664b385d0e32440b871c29b411a62a044dab87ba4d78
     name: it-fse-gtw-dispatcher
@@ -34,7 +34,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: "91000"
-    created: "2025-03-04T15:46:48.452299425+01:00"
+    created: "2025-03-04T16:02:40.378703395+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 793e48adb36286e40178479f2c4f1808b6a49dc9453ced704b310816f6b555bf
     name: it-fse-gtw-dispatcher
@@ -45,7 +45,7 @@ entries:
   it-fse-gtw-garbage:
   - apiVersion: v2
     appVersion: "90457"
-    created: "2025-03-04T15:46:48.453203585+01:00"
+    created: "2025-03-04T16:02:40.379665674+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 1205636cb350f401bcef09693944876c25454bd56714dfea403e4b02f741bcc8
     name: it-fse-gtw-garbage
@@ -55,8 +55,18 @@ entries:
     version: 0.1.0
   it-fse-gtw-indexer:
   - apiVersion: v2
+    appVersion: "98051"
+    created: "2025-03-04T16:02:40.380550469+01:00"
+    description: servizio del Fascicolo Sanitario Elettronico 2.0
+    digest: ded7e830462a2c34309d79957e74880f4ab2d8fa575bdc13267596941a05d293
+    name: it-fse-gtw-indexer
+    type: application
+    urls:
+    - it-fse-gtw-indexer/it-fse-gtw-indexer-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: "91056"
-    created: "2025-03-04T15:46:48.453598077+01:00"
+    created: "2025-03-04T16:02:40.380128791+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 2c985f68b011b42f4efe49eaaf7fc146034fb9608fff08c1f5732abf277f1640
     name: it-fse-gtw-indexer
@@ -67,7 +77,7 @@ entries:
   it-fse-gtw-ini-client:
   - apiVersion: v2
     appVersion: "98020"
-    created: "2025-03-04T15:46:48.454417699+01:00"
+    created: "2025-03-04T16:02:40.381418412+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 0ed405e60404e01dad096dec1976d6e3c0d3b2e03d9e1b83cebdd80b643df826
     name: it-fse-gtw-ini-client
@@ -77,7 +87,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: "91006"
-    created: "2025-03-04T15:46:48.453997699+01:00"
+    created: "2025-03-04T16:02:40.380961237+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 0bfe4fdbf4be05e7e71e05007c9d30591f55ba0cde96e5486afbf60a74c37752
     name: it-fse-gtw-ini-client
@@ -88,7 +98,7 @@ entries:
   it-fse-gtw-log-collector:
   - apiVersion: v2
     appVersion: "90461"
-    created: "2025-03-04T15:46:48.454818272+01:00"
+    created: "2025-03-04T16:02:40.381828318+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 1e1abe5a48b36529774ff49b3ed15c2e3b344a5d3a7c3e96912fd550478e11ae
     name: it-fse-gtw-log-collector
@@ -99,7 +109,7 @@ entries:
   it-fse-gtw-status-check:
   - apiVersion: v2
     appVersion: "98038"
-    created: "2025-03-04T15:46:48.455577229+01:00"
+    created: "2025-03-04T16:02:40.382607405+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: d439da8b52882316cd8017541594851ace7b98379e67f55be17208b0187e2a5f
     name: it-fse-gtw-status-check
@@ -109,7 +119,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: "90451"
-    created: "2025-03-04T15:46:48.455195492+01:00"
+    created: "2025-03-04T16:02:40.382218928+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: cd3ac11831090be4ae06798e3c9c968ffe07b7dc9dffaf2a18f66e04d8287c20
     name: it-fse-gtw-status-check
@@ -120,7 +130,7 @@ entries:
   it-fse-gtw-status-manager:
   - apiVersion: v2
     appVersion: "98039"
-    created: "2025-03-04T15:46:48.457321278+01:00"
+    created: "2025-03-04T16:02:40.383413281+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 8826076c0e23c160bb78c82c4186d1b3ec1e2520f589eb2b87fecd43bc3aff0a
     name: it-fse-gtw-status-manager
@@ -130,7 +140,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: "90450"
-    created: "2025-03-04T15:46:48.455966221+01:00"
+    created: "2025-03-04T16:02:40.383002914+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: 6d18ebcf2a79aeb78bdf3620974040a46458f44309d394c48440c9bb4d27e314
     name: it-fse-gtw-status-manager
@@ -141,7 +151,7 @@ entries:
   it-fse-gtw-validator:
   - apiVersion: v2
     appVersion: "98052"
-    created: "2025-03-04T15:46:48.458229256+01:00"
+    created: "2025-03-04T16:02:40.384598889+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: d3bb553d0a554bbf750aeca2eda1ae99aad8940d827e693ed4dcf0f42a75b661
     name: it-fse-gtw-validator
@@ -151,7 +161,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: "90991"
-    created: "2025-03-04T15:46:48.457783337+01:00"
+    created: "2025-03-04T16:02:40.383851271+01:00"
     description: servizio del Fascicolo Sanitario Elettronico 2.0
     digest: dcf904bb8fbf97f03eba8361622ef92415171a314649cd9a9d2fcf4ed65653c4
     name: it-fse-gtw-validator
@@ -159,4 +169,4 @@ entries:
     urls:
     - it-fse-gtw-validator/it-fse-gtw-validator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-04T15:46:48.450799254+01:00"
+generated: "2025-03-04T16:02:40.376316325+01:00"
