@@ -9,8 +9,7 @@ Prima di procedere con l'installazione, assicurati di avere:
 1. **Cluster Kubernetes** configurato e funzionante.
 2. **Helm** installato (versione 3 o superiore).
 3. **Oggetti ConfigMap e Secret** necessari creati nel namespace di destinazione.
-4. **Event Hub, Cosmos DB e PostGres** su Azure, poiché sono essenziali per il corretto funzionamento dei servizi da deployare.
-
+4. **Event Hub, Cosmos DB e Postgres DB** su Azure, poiché sono essenziali per il corretto funzionamento dei servizi da deployare.
 
 ## Aggiungere il Repository Helm
 
