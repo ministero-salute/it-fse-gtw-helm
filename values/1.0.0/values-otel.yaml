@@ -1,0 +1,134 @@
+imagePullSecrets:
+  # Sostituisci il valore di gatewayfse con il nome del secret che è stato definito
+  - name: gatewayfse
+
+otelCollector:
+
+  ## override default collector name
+  # collectorName:
+  
+  ## Defines type of scaling. Permitted values are static or dynamic.
+  ## At this moment is only available static mode. In future release will be added also dynamic.
+  scalingMode: static
+  ## Replicas must be defined only if scalingMode is static.
+  replicas: 1
+  
+  ## Freeform resources for application. More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+  # resources: 
+  #   limits:
+  #     cpu: 100m
+  #     memory: 256Mi
+  #   requests:
+  #     cpu: 500m
+  #     memory: 512Mi
+
+  ## Define receivers if predefined ones are not suitable (for details check documentation of this chart in the reference helm chart wiki).
+  ## Receivers collect data from different sources.
+  ## This section is freeform. Check the documentation from: 
+  # receivers:
+
+  ## Define exporters if predefined ones are not suitable (for details check documentation of this chart in the reference helm chart wiki).
+  ## Exporters send collected data to external systems.
+  ## This section is freeform. Check the documentation from:
+  exporters:
+    azuremonitor:
+      # Specificare la Connection Stirng Application Insights
+      connection_string: ''
+
+  ## Enable debug to collector terminal
+  debug: true
+  ## Used when debug is true. Permitted values are detailed, normal and basic. 
+  debugVerbority: detailed
+  ## Expose collector specific metrics in order to monitor telemetry infrastructure.
+  exposeCollectorMetrics: false
+
+  ## Configuration about log signal telemetry.
+  logConfig:
+
+    ## Switch on/off log telemetry
+    enableTelemetry: true
+
+    ## Configure log server endpoint. Required when no other exporters are defined in log pipeline.
+    # serverEndpoint:
+
+    ## Percentage of processed logs
+    samplingPercentage: 100
+
+    ## Add defined receivers and exporters to signal pipeline.
+    pipeline:
+      # receivers: []
+      exporters:
+      - azuremonitor
+
+  ## Configuration about metric signal telemetry.
+  metricConfig:
+
+    ## Switch on/off metric telemetry
+    enableTelemetry: true
+
+    ## Add defined receivers and exporters to signal pipeline.
+    pipeline:
+      # receivers: []
+      exporters:
+      - azuremonitor
+
+  ## Configuration about trace signal telemetry.
+  traceConfig:
+
+    ## Switch on/off metric telemetry
+    enableTelemetry: true
+
+    ## Configure trace server endpoint. Required when no other exporters are defined in trace pipeline.
+    # serverEndpoint:
+
+    ## Select the sampling mode: "head" or "tail"
+    ## Head mode samples spans based on TraceID whithout waiting the whole trace has collected.
+    ## Tail mode samples traces when the whole trace has collected. This mode is less efficient but allows
+    ## a more useful and smart sampling.
+    samplingMode: tail
+    ## Percentage of processed traces (used in all sampling modes)
+    samplingPercentage: 100
+    ## Configuration of tail sampling (used when mode is tail)
+    tailSamplingPolicies:
+
+      ## Optional advanced settings (uncomment to enable):
+      ## Timeout for decision making (e.g., "10s")
+      # decisionWait: 10s
+      ## Maximum number of traces kept in memory for decision making
+      # samplingTracesNum: 5000
+      ## Configure pvc name used for the traces sampling
+      # volume: project-volume-1
+
+      ## Simple predefined policies can be used enabling the following flags.
+      ## Generate a default policy retains traces that contain errors
+      retainErrors: true
+      ## Generate a default policy retains traces with high latency
+      retainHighLatency: false
+      ## Latency threshold in milliseconds (used when samplingRetainHighLatency is true)
+      # latencyThreshold:
+      
+      ## User-defined sampling policies substitute default ones. When defined these are the only policies applied.
+      ## For more information about policies sampling, refer to the official documentation:
+      ## https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/tailsamplingprocessor/README.md
+      # userDefinedPolicies:
+      ## json format
+      # [
+      #   {
+      #     name: test-policy-3,
+      #     type: numeric_attribute,
+      #     numeric_attribute: {key: key1, min_value: 50, max_value: 100}
+      #   }
+      # ]
+      ## or yaml format
+      # - name: test-policy-3
+      #   numeric_attribute:
+      #     key: key1
+      #     max_value: 100
+      #     min_value: 50
+      #   type_: numeric_attribute
+
+    ## Add defined receivers and exporters to signal pipeline.
+    pipeline:
+      # receivers: []
+      exporters:
+      - azuremonitor

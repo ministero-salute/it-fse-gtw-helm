@@ -1,0 +1,35 @@
+imagePullSecrets:
+  # Sostituisci il valore di gatewayfse con il nome del secret che è stato definito
+  - name: gatewayfse
+
+secrets:
+  #	Nome del key vault definito durante la predisposizione dell'infrastruttura
+  keyvaultName: "REPLACE_KEY-VAULT-NAME"
+  # ID definito durante la predisposizione dell'infrastruttura
+  tenantId: "REPLACE_TENANT-ID"
+  secretKeyVaultName: secrets-store-creds
+
+keystore:
+  # Nome del file che si vuole fornire al certificato di autenticazione verso i servizi INI
+  authIni: A1GTW-INI.pfx
+  # Nome del file che si vuole fornire al certificato di autenticazione verso i servizi del Centralizzato
+  authCentralizzato: auth-centralized-services.pfx
+
+truststore:
+  # Nome del file associato in fase di creazione della configmap govway-truststore-cm
+  # File contenente la CA del Ministero Salute
+  caSalute: trustStore.jks
+  # File contenente la CA del certificato server di INI
+  authIni: trustStoreINI.jks
+
+fullnameOverride: it-fse-gtw-govway-run
+
+image:
+  registry:
+    urlGovWay: private-registry/fse
+
+govway:
+  runService: it-fse-gtw-govway-run
+
+cloud:
+  storageClassName: azure-file-fse

@@ -1,0 +1,30 @@
+imagePullSecrets:
+  # Sostituisci il valore di gatewayfse con il nome del secret che è stato definito
+  - name: gatewayfse
+
+secrets:
+  #	Nome del key vault definito durante la predisposizione dell'infrastruttura
+  keyvaultName: "REPLACE_KEY-VAULT-NAME"
+  # ID definito durante la predisposizione dell’infrastruttura
+  tenantId: "REPLACE_TENANT-ID"
+  secretKeyVaultName: "secrets-store-creds"
+  masterKeyName: "test-master-key"
+  mongoDataKeyName: "test"
+
+# Per disattivare l'autoscaler
+# autoscaler:
+#   enabled: false 
+
+# route:
+#   # Impostando questo valore viene creata la rotta per esporre il servizio
+#   enabled: true
+
+image:
+  registry:
+    url: private-registry/fse
+
+addresses:
+ keyVaultUrl: "REPLACE_KEY-VAULT-URL"
+
+keystore:
+  signIni: "S1GTW-INI.jks"
