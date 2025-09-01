@@ -1,0 +1,20 @@
+cloudProvider: azure
+
+imagePullSecrets:
+  - name: gatewayfse
+
+secrets:
+  azure:
+    keyvaultName: "REPLACE_KEY-VAULT-NAME"
+    tenantId: "REPLACE_TENANT-ID"
+    secretKeyVaultName: "secrets-store-creds"
+
+autoscaler:
+  enabled: false 
+  
+ingress:
+  enabled: false
+
+image:
+  registry:
+    url: private-registry/fse

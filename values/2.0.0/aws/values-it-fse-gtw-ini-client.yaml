@@ -1,0 +1,28 @@
+cloudProvider: aws
+
+imagePullSecrets:
+  - name: gatewayfse
+
+serviceAccountName: "REPLACE-SERVICE-ACCOUNT-NAME"
+
+securityContext: 
+  runAsNonRoot: true
+  runAsUser: 1000
+
+secrets:
+  mongoDataKeyName: "test"  
+  aws:
+    # Regione primaria AWS
+    region: "eu-central-1"    
+    masterkeyArn: "REPLACE_MASTER-KEY-ARN"
+         
+
+autoscaler:
+  enabled: false 
+
+image:
+  registry:
+    url: private-registry/fse
+
+env:
+  GC_MAX_METASPACE_SIZE: "256"

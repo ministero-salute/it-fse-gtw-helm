@@ -1,0 +1,26 @@
+cloudProvider: aws
+
+imagePullSecrets:
+  - name: gatewayfse
+
+serviceAccountName: "REPLACE-SERVICE-ACCOUNT-NAME"
+
+securityContext: 
+  runAsNonRoot: true
+  runAsUser: 1000
+
+secrets:
+  aws:
+    # Regione primaria AWS
+    region: "eu-central-1"          
+    
+
+autoscaler:
+  enabled: false 
+  
+ingress:
+  enabled: false
+
+image:
+  registry:
+    url: private-registry/fse
