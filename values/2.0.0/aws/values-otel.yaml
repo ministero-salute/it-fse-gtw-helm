@@ -50,21 +50,6 @@ otelCollector:
   ## Expose collector specific metrics in order to monitor telemetry infrastructure.
   ## Available values: none, basic, normal, detailed
   internalMetricsLevel: none
-  
-  ## Freeform env for the application app. More information: https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/
-  env:
-  #  - name: VAR_NAME
-  #    value: var-value
-  #  - name: VAR_CONFIG_MAP
-  #      valueFrom:
-  #        configMapKeyRef:
-  #          name: my-config-map
-  #          key: my-key
-  #  - name: OTEL-DYNATRACE-TOKEN
-  #      valueFrom:
-  #        secretKeyRef:
-  #          name: my-secret
-  #          key: token
 
   ## Configuration about log signal telemetry.
   logConfig:
