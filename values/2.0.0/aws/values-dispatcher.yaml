@@ -1,0 +1,32 @@
+cloudProvider: aws
+
+imagePullSecrets:
+  - name: gatewayfse
+
+serviceAccountName: "REPLACE-SERVICE-ACCOUNT-NAME"
+
+securityContext: 
+  runAsNonRoot: true
+  runAsUser: 1000
+
+secrets:
+  mongoDataKeyName: "test"  
+  aws:
+    # Regione primaria AWS
+    region: "eu-central-1"    
+    masterkeyArn: "REPLACE_MASTER-KEY-ARN"
+         
+
+autoscaler:
+  enabled: false 
+  
+ingress:
+  enabled: true
+  host: "REPLACE-HOST-NAME"
+  path: "REPLACE-PATH"
+  portNumber: 8080
+
+image:
+  registry:
+    url: private-registry/fse
+ 

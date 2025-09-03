@@ -2,6 +2,14 @@
 
 Il repository **it-fse-gtw-helm** contiene i chart Helm relativi ai servizi connessi al **Fascicolo Sanitario Elettronico (FSE)**, in particolare il **Gateway Distruito**.
 
+## Cronologia delle versioni
+
+| Versione Chart | Descrizione                                                                 |
+|----------|------------------------------------------------------------------------------|
+| v1.0.0   | Prima release ufficiale. Supporta il deployment esclusivamente su ambiente Azure. |
+| v2.0.0   | Estensione delle funzionalità con supporto al deployment multi-cloud su Azure e AWS. |
+
+
 ## Prerequisiti
 
 Prima di procedere con l'installazione, assicurati di avere:
@@ -9,7 +17,10 @@ Prima di procedere con l'installazione, assicurati di avere:
 1. **Cluster Kubernetes** configurato e funzionante.
 2. **Helm** installato (versione 3 o superiore).
 3. **Oggetti ConfigMap e Secret** necessari creati nel namespace di destinazione.
-4. **Event Hub, Cosmos DB e Postgres DB** su Azure, poiché sono essenziali per il corretto funzionamento dei servizi da deployare.
+4. **Servizi cloud richiesti**:  
+   - **Azure**: Event Hub, Cosmos DB e Postgres DB  
+   - **AWS**: MSK, DocumentDB e Aurora DB (PostgreSQL)  
+   Questi servizi sono indispensabili per il corretto funzionamento dei componenti da deployare.
 
 ## Aggiungere il Repository Helm
 
@@ -60,4 +71,4 @@ helm uninstall <nome-release> --namespace <namespace>
 
 ## Nota Finale
 
-Assicurati che tutte le configurazioni nei file `values.yaml` siano aggiornate in base al tuo ambiente di destinazione. **Predisponi Event Hub, Cosmos DB e PostGres su Azure**, poiché sono componenti fondamentali richiesti dai servizi. Consulta la documentazione ufficiale di Helm per ulteriori dettagli su come utilizzare i chart Helm.
+Assicurati che tutte le configurazioni nei file `values.yaml` siano aggiornate in base al tuo ambiente di destinazione. **Predisponi Event Hub, Cosmos DB e PostgresSQL su Azure** e **MSK, DocumentDB e Aurora DB (PostgreSQL) su AWS**, poiché sono componenti fondamentali richiesti dai servizi. Consulta la documentazione ufficiale di Helm per ulteriori dettagli su come utilizzare i chart Helm.

@@ -1,0 +1,27 @@
+cloudProvider: azure
+
+imagePullSecrets:
+  - name: gatewayfse
+
+secrets:
+  mongoDataKeyName: "test"
+  azure:
+    masterKeyName: "test-master-key"
+    keyVaultUrl: "REPLACE_KEY-VAULT-URL"
+    keyvaultName: "REPLACE_KEY-VAULT-NAME"
+    tenantId: "REPLACE_TENANT-ID"
+    secretKeyVaultName: "secrets-store-creds"
+    
+autoscaler:
+  enabled: false 
+  
+ingress:
+  enabled: true
+  host: "REPLACE-HOST-NAME"
+  path: "REPLACE-PATH"
+  portNumber: 8080
+
+image:
+  registry:
+    url: private-registry/fse
+ 

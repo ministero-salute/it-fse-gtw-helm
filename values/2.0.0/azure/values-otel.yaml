@@ -1,0 +1,197 @@
+
+# namespace: <name>
+
+imagePullSecrets:
+  - name: gatewayfse
+
+image:
+  registry:
+    url: gatewayfse.azurecr.io/fse
+    name: sogei-custom-collector
+    tag: 1.0.1-v0.119.0
+
+otelCollector:
+
+  ## Override default collector name
+  # collectorName:
+  
+  ## Define target kubernetes provider.
+  ## Available values are: azure,aws
+  cloudProvider: azure
+
+  # awsParamters:
+  #   region: eu-west-1
+  #   irsaRoleArn: "arn:aws:iam::123456789012:role/otel-collector-role"
+  #   logGroupName: "/my-app/logs"
+  #   logStreamName: "my-app-log-stream"
+
+  ## Defines type of scaling. Permitted values are static or dynamic.
+  ## At this moment is only available static mode. In future release will be added also dynamic.
+  scalingMode: static
+  ## Replicas must be defined only if scalingMode is static.
+  replicas: 1
+  
+  ## Freeform resources for application. More information: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+  # resources: 
+  #   limits:
+  #     cpu: 100m
+  #     memory: 256Mi
+  #   requests:
+  #     cpu: 500m
+  #     memory: 512Mi
+
+  ## Define receivers if predefined ones are not suitable (for details check documentation of this chart in the reference helm chart wiki).
+  ## Receivers collect data from different sources.
+  ## This section is freeform. Check the documentation from: 
+  # receivers:
+
+  ## Define exporters if predefined ones are not suitable (for details check documentation of this chart in the reference helm chart wiki).
+  ## Exporters send collected data to external systems.
+  ## This section is freeform. Check the documentation from:
+  # exporters:
+
+  ## Enable debug to collector terminal
+  debug: true
+  ## Used when debug is true. Permitted values are detailed, normal and basic. 
+  debugVerbority: normal
+
+  ## Expose collector specific metrics in order to monitor telemetry infrastructure.
+  ## Available values: none, basic, normal, detailed
+  internalMetricsLevel: none
+  
+  ## Freeform env for the application app. More information: https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/
+  env:
+  #  - name: VAR_NAME
+  #    value: var-value
+  #  - name: VAR_CONFIG_MAP
+  #      valueFrom:
+  #        configMapKeyRef:
+  #          name: my-config-map
+  #          key: my-key
+  #  - name: OTEL-DYNATRACE-TOKEN
+  #      valueFrom:
+  #        secretKeyRef:
+  #          name: my-secret
+  #          key: token
+
+  ## Configuration about log signal telemetry.
+  logConfig:
+
+    ## Switch on/off log telemetry
+    enableTelemetry: true
+
+    ## Configure log server endpoint. Required when no other exporters are defined in log pipeline.
+    serverEndpoint: "InstrumentationKey=187fe813-74e1-42bf-a91f-1ca827dbd652;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/;ApplicationId=1416c840-1f72-4be2-8730-f6ee0a29a1cb" 
+
+    ## Percentage of processed logs
+    samplingPercentage: 100
+
+    ## Filter logs
+    # filter:      
+    #   log_record:
+    #     - 'IsMatch(body, ".*password.*")'
+    #     - 'severity_number < SEVERITY_NUMBER_WARN'
+
+    ## Add defined receivers and exporters to signal pipeline.
+    pipeline:
+      # receivers: []
+      # exporters: []
+
+  ## Configuration about metric signal telemetry.
+  metricConfig:
+
+    ## Switch on/off metric telemetry
+    enableTelemetry: true
+
+    ## Configure metric server endpoint. 
+    ## Required when no other exporters are defined in metric pipeline and cloud provider expect metrics
+    ## to be pushed to backend server.
+    serverEndpoint: "InstrumentationKey=187fe813-74e1-42bf-a91f-1ca827dbd652;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/;ApplicationId=1416c840-1f72-4be2-8730-f6ee0a29a1cb"
+
+    ## Filter metrics
+    # filter:      
+    #   metric:
+    #     - 'name == "my.metric" and resource.attributes["my_label"] == "abc123"'
+    #     - 'type == METRIC_DATA_TYPE_HISTOGRAM'
+    #   datapoint:
+    #     - 'metric.type == METRIC_DATA_TYPE_SUMMARY'
+    #     - 'resource.attributes["service.name"] == "my_service_name"'
+
+    ## Add defined receivers and exporters to signal pipeline.
+    pipeline:
+      # receivers: []
+      # exporters: []
+
+  ## Configuration about trace signal telemetry.
+  traceConfig:
+
+    ## Switch on/off trace telemetry
+    enableTelemetry: true
+
+    ## Configure trace server endpoint and auth. Required when no other exporters are defined in trace pipeline.
+    serverEndpoint: "InstrumentationKey=187fe813-74e1-42bf-a91f-1ca827dbd652;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/;ApplicationId=1416c840-1f72-4be2-8730-f6ee0a29a1cb"
+    ## Define type of authorization used.
+    # authType: Api-Token
+    ## Reference variable containing authorization data. Required when endpoint is authenticated and no other exporters are defined in trace pipeline.
+    # authVariableRef: OTEL-DYNATRACE-TOKEN
+
+    ## Filter traces. When defined, these configurations substitute default ones and are the only applied.
+    # filter:
+    #   span:
+    #     - 'attributes["container.name"] == "app_container_1"'
+    #     - 'resource.attributes["host.name"] == "localhost"'
+    #     - 'name == "app_3"'
+    #   spanevent:
+    #     - 'attributes["grpc"] == true'
+    #     - 'IsMatch(name, ".*grpc.*")'
+
+    ## Select the sampling mode: "head" or "tail"
+    ## Head mode samples spans based on TraceID whithout waiting the whole trace has collected.
+    ## Tail mode samples traces when the whole trace has collected. This mode is less efficient but allows
+    ## a more useful and smart sampling.
+    samplingMode: tail
+    ## Percentage of processed traces (used in all sampling modes)
+    samplingPercentage: 100
+    ## Configuration of tail sampling (used when mode is tail)
+    tailSamplingPolicies:
+
+      ## Optional advanced settings (uncomment to enable):
+      ## Timeout for decision making (e.g., "10s")
+      # decisionWait: 10s
+      ## Maximum number of traces kept in memory for decision making
+      # samplingTracesNum: 5000
+      ## Configure pvc name used for the traces sampling
+      # volume: project-volume-1
+
+      ## Simple predefined policies can be used enabling the following flags.
+      ## Generate a default policy retains traces that contain errors
+      retainErrors: false
+      ## Generate a default policy retains traces with high latency
+      retainHighLatency: false
+      ## Latency threshold in milliseconds (used when samplingRetainHighLatency is true)
+      # latencyThreshold:
+      
+      ## User-defined sampling policies substitute default ones. When defined these are the only policies applied.
+      ## For more information about policies sampling, refer to the official documentation:
+      ## https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/tailsamplingprocessor/README.md
+      # userDefinedPolicies:
+      ## json format
+      # [
+      #   {
+      #     name: test-policy-3,
+      #     type: numeric_attribute,
+      #     numeric_attribute: {key: key1, min_value: 50, max_value: 100}
+      #   }
+      # ]
+      ## or yaml format
+      # - name: test-policy-3
+      #   numeric_attribute:
+      #     key: key1
+      #     max_value: 100
+      #     min_value: 50
+      #   type_: numeric_attribute
+
+    ## Add defined receivers and exporters to signal pipeline.
+    pipeline:
+      # receivers: []
+      # exporters: []
