@@ -19,7 +19,7 @@ otelCollector:
   ## Available values are: azure,aws
   cloudProvider: azure
 
-  # awsParamters:
+  # awsParameters:
   #   region: eu-west-1
   #   irsaRoleArn: "arn:aws:iam::123456789012:role/otel-collector-role"
   #   logGroupName: "/my-app/logs"

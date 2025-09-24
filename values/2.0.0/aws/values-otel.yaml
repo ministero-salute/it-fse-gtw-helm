@@ -12,7 +12,7 @@ otelCollector:
   ## Available values are: azure,aws
   cloudProvider: aws
 
-  awsParamters:
+  awsParameters:
     region: eu-central-1 # Regione AWS in cui viene eseguito il collector (es. eu-west-1)
     logGroupName: "/fse-gtw-otel/logs" # Nome del CloudWatch Log Group dove inviare i log raccolti
     logStreamName: "fse-gtw-otel-log-stream" # Nome del CloudWatch Log Stream all'interno del
